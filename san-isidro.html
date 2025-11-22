@@ -65,6 +65,9 @@
             z-index: 2; /* Asegura que el contenido sea visible */
         }
 
+        .bg-color-css{
+            background-color: #bb0909;
+        }
         .section-spacing {
             padding: 8rem 0;
         }
@@ -136,7 +139,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="pt-32 pb-20 md:pt-40 md:pb-32">
+    <section id="inicio" class="min-h-screen pt-32 pb-20 md:pt-40 md:pb-32">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="max-w-4xl">
                 <p class="text-sm tracking-widest text-white mb-6 font-light">INSTITUCIÓN EDUCATIVA</p>
@@ -146,7 +149,7 @@
                 <p class="text-lg md:text-xl text-white font-light leading-relaxed max-w-2xl mb-12">
                     Formando personas íntegras con excelencia académica y compromiso social desde 1985
                 </p>
-                <a href="#contacto" class="inline-block  text-white border-b-2 border-gray-900 pb-1 text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300">
+                <a href="#contacto" class="inline-block  text-white border-b-2 border-white pb-1 text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300">
                     CONOCER MÁS
                 </a>
             </div>
@@ -154,16 +157,16 @@
     </section>
 
     <!-- Nosotros Section -->
-    <section id="nosotros" class="section-spacing bg-gray-50">
+    <section id="nosotros" class="section-spacing bg-color-css ">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <div class="grid md:grid-cols-2 gap-16 lg:gap-24">
                 <div>
-                    <p class="text-sm tracking-widest text-gray-500 mb-6 font-light">NUESTRA HISTORIA</p>
-                    <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight">
+                    <p class="text-sm tracking-widest text-white mb-6 font-light">NUESTRA HISTORIA</p>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight text-white">
                         Más de tres décadas cultivando conocimiento
                     </h2>
                 </div>
-                <div class="space-y-6 text-gray-600 font-light leading-relaxed">
+                <div class="space-y-6 text-white font-light leading-relaxed ">
                     <p>
                         Fundado en 1985, el Colegio San Isidro Labrador ha sido referente en educación 
                         de calidad, formando generaciones de estudiantes comprometidos con la excelencia 
@@ -178,45 +181,41 @@
             </div>
             
             <!-- Información de Contacto -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-16 border-t border-gray-200">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-16 border-t border-gray-200">
                 <div>
-                    <p class="text-xs tracking-widest text-gray-400 mb-3">UBICACIÓN</p>
-                    <p class="text-sm text-gray-700 font-light">San Isidro<br>Quilmana, Cañete</p>
+                    <p class="text-xs tracking-widest text-white mb-3">UBICACIÓN</p>
+                    <p class="text-sm text-white font-light">San Isidro<br>Quilmana, Cañete</p>
                 </div>
                 <div>
-                    <p class="text-xs tracking-widest text-gray-400 mb-3">TELÉFONO</p>
-                    <p class="text-sm text-gray-700 font-light">+52 934 134 321</p>
+                    <p class="text-xs tracking-widest text-white mb-3">HORARIO</p>
+                    <p class="text-sm text-white font-light">Lun - Vie<br>7:00 - 15:00</p>
                 </div>
                 <div>
-                    <p class="text-xs tracking-widest text-gray-400 mb-3">EMAIL</p>
-                    <p class="text-sm text-gray-700 font-light">info@sanisidro.edu</p>
+                    <p class="text-xs tracking-widest text-white mb-3">TELÉFONO</p>
+                    <p class="text-sm text-white font-light">+52 934 134 321</p>
                 </div>
                 <div>
-                    <p class="text-xs tracking-widest text-gray-400 mb-3">HORARIO</p>
-                    <p class="text-sm text-gray-700 font-light">Lun - Vie<br>7:00 - 15:00</p>
+                    <p class="text-xs tracking-widest text-white mb-3">EMAIL</p>
+                    <p class="text-sm text-white font-light">info@sanisidro.edu</p>
                 </div>
             </div>
             
             <!-- Convenios -->
             <div class="mt-20">
-                <p class="text-xs tracking-widest text-gray-400 mb-8">ALIANZAS ESTRATÉGICAS</p>
+                <p class="text-xs tracking-widest text-white mb-8">ALIANZAS ESTRATÉGICAS</p>
                 
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
                     <!-- Universidades -->
-                    <div class="aspect-square relative group bg-[url('imagenes/convenio-1.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
-                        
-                        <!-- Opacidad que desaparece en hover -->
+                    <div class="w-40 md:w-48 aspect-square relative group bg-[url('imagenes/convenio-1.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
                         <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
-
-                        <!-- Texto visible, desaparece con hover -->
                         <div class="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                             <span class="text-xs tracking-wider text-white">Universidades</span>
                         </div>
                     </div>
 
                     <!-- Comunidad -->
-                    <div class="aspect-square relative group bg-[url('imagenes/convenio-2.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
+                    <div class="w-40 md:w-48 aspect-square relative group bg-[url('imagenes/convenio-2.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
                         <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
                         <div class="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                             <span class="text-xs tracking-wider text-white">Comunidad</span>
@@ -224,7 +223,7 @@
                     </div>
 
                     <!-- UGEL -->
-                    <div class="aspect-square relative group bg-[url('imagenes/convenio-3.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
+                    <div class="w-40 md:w-48 aspect-square relative group bg-[url('imagenes/convenio-3.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
                         <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
                         <div class="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                             <span class="text-xs tracking-wider text-white">UGEL</span>
@@ -232,7 +231,7 @@
                     </div>
 
                     <!-- Instituciones -->
-                    <div class="aspect-square relative group bg-[url('imagenes/convenio-4.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
+                    <div class="w-40 md:w-48 aspect-square relative group bg-[url('imagenes/convenio-4.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
                         <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
                         <div class="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
                             <span class="text-xs tracking-wider text-white">Instituciones</span>
@@ -280,7 +279,7 @@
             <!-- Valores -->
             <div class="border-t border-gray-200 pt-16">
                 <p class="text-xs tracking-widest text-gray-400 mb-16 text-center ">VALORES INSTITUCIONALES</p>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
                     <div class="text-center">
                         <div class="w-12 h-12 rounded-full border border-gray-300 mx-auto mb-4 flex items-center justify-center">
                             <span class="text-sm font-light">01</span>
@@ -326,7 +325,7 @@
                 </h2>
             </div>
             
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
 
                 <div class="aspect-[4/5] relative group bg-[url('imagenes/galeria-1.png')] bg-cover bg-center flex items-center justify-center">
                     <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
@@ -384,7 +383,7 @@
                 </h2>
             </div>
             
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Docente 1 -->
                 <div class="group">
                     <div class="aspect-[3/4] bg-gray-200 mb-4 overflow-hidden">
@@ -442,7 +441,7 @@
                     </a>
                 </div>
                 
-                <div class="grid sm:grid-cols-2 gap-8">
+                <div class="grid grid-cols-2 gap-8">
                     <div>
                         <p class="text-xs tracking-widest text-gray-500 mb-4">DIRECCIÓN</p>
                         <p class="text-sm font-light text-gray-300">
