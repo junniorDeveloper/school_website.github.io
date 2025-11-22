@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Isidro Labrador - Institución Educativa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#B91C1C',
+                        secondary: '#15803D',
+                        accent: '#CA8A04',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        #inicio {
+            position: relative; /* Para posicionar el pseudo-elemento */
+            overflow: hidden; /* Para ocultar cualquier desbordamiento */
+        }
+
+        #inicio::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('imagenes/hero.png'); /* Cambia esta ruta */
+            background-size: cover; /* Para cubrir todo el contenedor */
+            background-position: center; /* Centrar la imagen */
+            z-index: 0; /* Coloca el pseudo-elemento detrás del contenido */
+        }
+
+        #inicio::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Color negro con 50% de opacidad */
+            z-index: 1; /* Coloca este elemento encima de la imagen */
+        }
+
+        #inicio > div {
+            position: relative; /* Para que el contenido esté por encima del fondo */
+            z-index: 2; /* Asegura que el contenido sea visible */
+        }
+
+        .section-spacing {
+            padding: 8rem 0;
+        }
+        
+        @media (max-width: 768px) {
+            .section-spacing {
+                padding: 4rem 0;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .line-decoration::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 60px;
+            height: 1px;
+            background: currentColor;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20">
+                <a href="#inicio" class="font-serif text-xl tracking-tight">
+                    San Isidro Labrador
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-10 text-sm font-light">
+                    <a href="#nosotros" class="hover:text-primary transition-colors duration-300">Nosotros</a>
+                    <a href="#mision" class="hover:text-primary transition-colors duration-300">Identidad</a>
+                    <a href="#galeria" class="hover:text-primary transition-colors duration-300">Galería</a>
+                    <a href="#docentes" class="hover:text-primary transition-colors duration-300">Equipo</a>
+                    <a href="#contacto" class="border border-gray-900 px-5 py-2 hover:bg-gray-900 hover:text-white transition-all duration-300">Contacto</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100">
+            <div class="px-6 py-6 space-y-4 text-sm">
+                <a href="#nosotros" class="block hover:text-primary transition-colors">Nosotros</a>
+                <a href="#mision" class="block hover:text-primary transition-colors">Identidad</a>
+                <a href="#galeria" class="block hover:text-primary transition-colors">Galería</a>
+                <a href="#docentes" class="block hover:text-primary transition-colors">Equipo</a>
+                <a href="#contacto" class="block pt-2">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 md:pt-40 md:pb-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="max-w-4xl">
+                <p class="text-sm tracking-widest text-white mb-6 font-light">INSTITUCIÓN EDUCATIVA</p>
+                <h1 class="font-serif text-white text-5xl md:text-7xl lg:text-8xl leading-[1.1] mb-8 fade-in">
+                    San Isidro<br>Labrador
+                </h1>
+                <p class="text-lg md:text-xl text-white font-light leading-relaxed max-w-2xl mb-12">
+                    Formando personas íntegras con excelencia académica y compromiso social desde 1985
+                </p>
+                <a href="#contacto" class="inline-block  text-white border-b-2 border-gray-900 pb-1 text-sm tracking-wide hover:border-primary hover:text-primary transition-all duration-300">
+                    CONOCER MÁS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="section-spacing bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-2 gap-16 lg:gap-24">
+                <div>
+                    <p class="text-sm tracking-widest text-gray-500 mb-6 font-light">NUESTRA HISTORIA</p>
+                    <h2 class="font-serif text-4xl md:text-5xl mb-8 leading-tight">
+                        Más de tres décadas cultivando conocimiento
+                    </h2>
+                </div>
+                <div class="space-y-6 text-gray-600 font-light leading-relaxed">
+                    <p>
+                        Fundado en 1985, el Colegio San Isidro Labrador ha sido referente en educación 
+                        de calidad, formando generaciones de estudiantes comprometidos con la excelencia 
+                        académica y los valores humanos.
+                    </p>
+                    <p>
+                        Nuestra comunidad educativa se distingue por su enfoque integral, combinando 
+                        rigurosidad académica con desarrollo personal, preparando estudiantes capaces 
+                        de enfrentar los desafíos del mundo contemporáneo.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Información de Contacto -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-20 pt-16 border-t border-gray-200">
+                <div>
+                    <p class="text-xs tracking-widest text-gray-400 mb-3">UBICACIÓN</p>
+                    <p class="text-sm text-gray-700 font-light">San Isidro<br>Quilmana, Cañete</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest text-gray-400 mb-3">TELÉFONO</p>
+                    <p class="text-sm text-gray-700 font-light">+52 934 134 321</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest text-gray-400 mb-3">EMAIL</p>
+                    <p class="text-sm text-gray-700 font-light">info@sanisidro.edu</p>
+                </div>
+                <div>
+                    <p class="text-xs tracking-widest text-gray-400 mb-3">HORARIO</p>
+                    <p class="text-sm text-gray-700 font-light">Lun - Vie<br>7:00 - 15:00</p>
+                </div>
+            </div>
+            
+            <!-- Convenios -->
+            <div class="mt-20">
+                <p class="text-xs tracking-widest text-gray-400 mb-8">ALIANZAS ESTRATÉGICAS</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+                    <!-- Universidades -->
+                    <div class="aspect-square relative group bg-[url('imagenes/convenio-1.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
+                        
+                        <!-- Opacidad que desaparece en hover -->
+                        <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+
+                        <!-- Texto visible, desaparece con hover -->
+                        <div class="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                            <span class="text-xs tracking-wider text-white">Universidades</span>
+                        </div>
+                    </div>
+
+                    <!-- Comunidad -->
+                    <div class="aspect-square relative group bg-[url('imagenes/convenio-2.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                            <span class="text-xs tracking-wider text-white">Comunidad</span>
+                        </div>
+                    </div>
+
+                    <!-- UGEL -->
+                    <div class="aspect-square relative group bg-[url('imagenes/convenio-3.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                            <span class="text-xs tracking-wider text-white">UGEL</span>
+                        </div>
+                    </div>
+
+                    <!-- Instituciones -->
+                    <div class="aspect-square relative group bg-[url('imagenes/convenio-4.png')] bg-cover bg-center border border-gray-200 overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                        <div class="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                            <span class="text-xs tracking-wider text-white">Instituciones</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Misión y Visión -->
+    <section id="mision" class="section-spacing">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <p class="text-sm tracking-widest text-gray-500 mb-16 font-light">IDENTIDAD INSTITUCIONAL</p>
+            
+            <div class="grid md:grid-cols-2 gap-16 lg:gap-24 mb-20">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-1 h-12 bg-secondary mr-6"></div>
+                        <h3 class="font-serif text-3xl">Misión</h3>
+                    </div>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        Brindar educación integral de excelencia que desarrolle las capacidades 
+                        intelectuales, emocionales y sociales de nuestros estudiantes, cultivando 
+                        valores éticos y compromiso cívico para formar ciudadanos responsables 
+                        y exitosos en un mundo globalizado.
+                    </p>
+                </div>
+                
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-1 h-12 bg-accent mr-6"></div>
+                        <h3 class="font-serif text-3xl">Visión</h3>
+                    </div>
+                    <p class="text-gray-600 font-light leading-relaxed">
+                        Ser reconocidos como institución líder en excelencia académica y formación 
+                        humana, inspirando y preparando generaciones capaces de enfrentar desafíos 
+                        futuros con pensamiento crítico, creatividad y profundo compromiso social.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Valores -->
+            <div class="border-t border-gray-200 pt-16">
+                <p class="text-xs tracking-widest text-gray-400 mb-16 text-center ">VALORES INSTITUCIONALES</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full border border-gray-300 mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-sm font-light">01</span>
+                        </div>
+                        <p class="text-sm tracking-wide">Respeto</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full border border-gray-300 mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-sm font-light">02</span>
+                        </div>
+                        <p class="text-sm tracking-wide">Excelencia</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full border border-gray-300 mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-sm font-light">03</span>
+                        </div>
+                        <p class="text-sm tracking-wide">Honestidad</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 rounded-full border border-gray-300 mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-sm font-light">04</span>
+                        </div>
+                        <p class="text-sm tracking-wide">Solidaridad</p>
+                    </div>
+                    <!-- <div class="text-center">
+                        <div class="w-12 h-12 rounded-full border border-gray-300 mx-auto mb-4 flex items-center justify-center">
+                            <span class="text-sm font-light">05</span>
+                        </div>
+                        <p class="text-sm tracking-wide">Responsabilidad</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section id="galeria" class="section-spacing bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-16">
+                <p class="text-sm tracking-widest text-gray-500 mb-6 font-light">GALERÍA</p>
+                <h2 class="font-serif text-4xl md:text-5xl max-w-2xl leading-tight">
+                    Momentos que construyen futuro
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <div class="aspect-[4/5] relative group bg-[url('imagenes/galeria-1.png')] bg-cover bg-center flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <div class="relative z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                        <p class="text-sm tracking-widest text-white">ACADÉMICO</p>
+                    </div>
+                </div>
+
+                <div class="aspect-[4/5] relative group bg-[url('imagenes/galeria-2.png')] bg-cover bg-center flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <div class="relative z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                        <p class="text-sm tracking-widest text-white">DEPORTES</p>
+                    </div>
+                </div>
+
+                <div class="aspect-[4/5] relative group bg-[url('imagenes/galeria-3.png')] bg-cover bg-center flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <div class="relative z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                        <p class="text-sm tracking-widest text-white">CULTURA </p>
+                    </div>
+                </div>
+
+                <div class="aspect-[4/5] relative group bg-[url('imagenes/galeria-4.png')] bg-cover bg-center flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <div class="relative z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                        <p class="text-sm tracking-widest text-white">COMUNIDAD</p>
+                    </div>
+                </div>
+
+                <div class="aspect-[4/5] relative group bg-[url('imagenes/galeria-5.png')] bg-cover bg-center flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <div class="relative z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                        <p class="text-sm tracking-widest text-white">EVENTOS</p>
+                    </div>
+                </div>
+
+                <div class="aspect-[4/5] relative group bg-[url('imagenes/galeria-6.png')] bg-cover bg-center flex items-center justify-center">
+                    <div class="absolute inset-0 bg-black opacity-50 group-hover:opacity-0 transition-opacity duration-500"></div>
+                    <div class="relative z-10 opacity-100 group-hover:opacity-0 transition-opacity duration-300">
+                        <p class="text-sm tracking-widest text-white">AMBIENTAL</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Plana Docente -->
+    <section id="docentes" class="section-spacing">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-16">
+                <p class="text-sm tracking-widest text-gray-500 mb-6 font-light">EQUIPO DOCENTE</p>
+                <h2 class="font-serif text-4xl md:text-5xl max-w-2xl leading-tight">
+                    Profesionales dedicados a la excelencia
+                </h2>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Docente 1 -->
+                <div class="group">
+                    <div class="aspect-[3/4] bg-gray-200 mb-4 overflow-hidden">
+                        <img src="imagenes/profe-4.png" alt="Descripción de la imagen" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-xl mb-1">María García</h3>
+                    <p class="text-sm text-gray-500 mb-2">Dirección</p>
+                    <p class="text-xs text-gray-400 font-light">Magíster en Gestión Educativa</p>
+                </div>
+                
+                <!-- Docente 2 -->
+                <div class="group">
+                    <div class="aspect-[3/4] bg-gray-200 mb-4 overflow-hidden">
+                        <img src="imagenes/profe-1.png" alt="Descripción de la imagen" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-xl mb-1">Carlos Rodríguez</h3>
+                    <p class="text-sm text-gray-500 mb-2">Matemáticas</p>
+                    <p class="text-xs text-gray-400 font-light">Especialista en Educación</p>
+                </div>
+
+                
+                <!-- Docente 3 -->
+                <div class="group">
+                    <div class="aspect-[3/4] bg-gray-200 mb-4 overflow-hidden">
+                        <img src="imagenes/profe-3.png" alt="Descripción de la imagen" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-xl mb-1">Ana Martínez</h3>
+                    <p class="text-sm text-gray-500 mb-2">Literatura</p>
+                    <p class="text-xs text-gray-400 font-light">Licenciada en Letras</p>
+                </div>
+                
+                <!-- Docente 4 -->
+                <div class="group">
+                    <div class="aspect-[3/4] bg-gray-200 mb-4 overflow-hidden">
+                       <img src="imagenes/profe-2.png" alt="Descripción de la imagen" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="font-serif text-xl mb-1">Luis Fernández</h3>
+                    <p class="text-sm text-gray-500 mb-2">Ciencias</p>
+                    <p class="text-xs text-gray-400 font-light">Magíster en Educación</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-gray-900 text-white section-spacing">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-2 gap-16 mb-16">
+                <div>
+                    <h2 class="font-serif text-3xl md:text-4xl mb-8">
+                        Conversemos sobre el futuro de tus hijos
+                    </h2>
+                    <a href="mailto:info@sanisidro.edu" class="inline-block border-b border-white pb-1 text-sm tracking-wide hover:border-accent hover:text-accent transition-all duration-300">
+                        info@sanisidro.edu
+                    </a>
+                </div>
+                
+                <div class="grid sm:grid-cols-2 gap-8">
+                    <div>
+                        <p class="text-xs tracking-widest text-gray-500 mb-4">DIRECCIÓN</p>
+                        <p class="text-sm font-light text-gray-300">
+                            Av. Principal 123<br>
+                            Ciudad, País
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-xs tracking-widest text-gray-500 mb-4">CONTACTO</p>
+                        <p class="text-sm font-light text-gray-300">
+                            +52 934 134 321<br>
+                            Lun - Vie: 8:00 - 17:00
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-xs text-gray-500 mb-4 md:mb-0">
+                    © 2025 San Isidro Labrador. Todos los derechos reservados.
+                </p>
+                <div class="flex space-x-6 text-xs tracking-widest text-gray-500">
+                    <a href="#" class="hover:text-white transition-colors">FACEBOOK</a>
+                    <a href="#" class="hover:text-white transition-colors">INSTAGRAM</a>
+                    <a href="#" class="hover:text-white transition-colors">LINKEDIN</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div > *').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
